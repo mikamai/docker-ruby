@@ -5,7 +5,6 @@ RUN apt-get -yqq update
 RUN apt-get install -yqq autoconf \
                          build-essential \
                          libreadline-dev \
-                         libpq-dev \
                          libssl-dev \
                          libxml2-dev \
                          libyaml-dev \
