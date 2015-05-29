@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER MIKAMAI <info@mikamai.com>
 
+ENV REFRESHED_AT 2015-05-29
+
 RUN apt-get -yqq update
 RUN apt-get install -yqq autoconf \
                          build-essential \
@@ -21,11 +23,11 @@ RUN apt-get install -yqq autoconf \
                          ruby
 
 ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.1
-ENV RUBY_SHA 5a4de38068eca8919cb087d338c0c2e3d72c9382c804fb27ab746e6c7819ab28
+ENV RUBY_VERSION 2.2.2
+ENV RUBY_SHA 5ffc0f317e429e6b29d4a98ac521c3ce65481bfd22a8cf845fa02a7b113d9b44
 
-RUN mkdir -p /usr/src/ruby
-RUN cd /usr/src/ruby && \
+RUN mkdir -p /usr/src/ruby && \
+    cd /usr/src/ruby && \
     curl -OSL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.gz" && \
     $(test "$(sha256sum ruby-${RUBY_VERSION}.tar.gz |cut -d' ' -f1)" = "${RUBY_SHA}" || \
     $(>&2 echo "Bad Download, I'M OUT"; exit 1)) && \
