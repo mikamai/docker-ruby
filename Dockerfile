@@ -24,7 +24,7 @@ RUN apt-get install -yqq autoconf \
 
 ENV RUBY_MAJOR 2.2
 ENV RUBY_VERSION 2.2.4
-ENV RUBY_SHA 31203696adbfdda6f2874a2de31f7c5a1f3bcb6628f4d1a241de21b158cd5c76
+ENV RUBY_SHA b6eff568b48e0fda76e5a36333175df049b204e91217aa32a65153cc0cdcb761
 
 RUN mkdir -p /usr/src/ruby && \
     cd /usr/src/ruby && \
